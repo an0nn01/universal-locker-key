@@ -2,23 +2,21 @@ name: Build FAP
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main, dev ]
-  pull_request:
-    branches: [ main, dev ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        submodules: 'recursive'
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-    - name: Build FAP
-      uses: Dax89/flipperzero-ide-action@v1
-      with:
-        app: ${{ github.event.repository.name }}
-        target: f7
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-pip
+        pip3 install --upgrade ufbt
+
+    - name: Build FAP application
+      run: |
+        ufbt fapf7
