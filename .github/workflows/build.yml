@@ -13,3 +13,5 @@ jobs:
 
     - name: Build Flipper Application Package (.fap)
       uses: flipperdevices/flipperzero-ufbt-action@v0.1.4
+      with:
+        ufbt-args: fap
