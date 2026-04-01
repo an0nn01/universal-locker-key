@@ -11,12 +11,5 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y python3-pip
-        pip3 install --upgrade ufbt
-
-    - name: Build FAP application
-      run: |
-        ufbt fapf7
+    - name: Build Flipper Application Package (.fap)
+      uses: flipperdevices/flipperzero-ufbt-action@v0.1.4
