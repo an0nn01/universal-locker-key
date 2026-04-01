@@ -1,0 +1,6 @@
+App(
+    appid="universal_locker_key",
+    apptype="FlipperApp",
+    name="UniversalLockerKey",
+    entry_point="universal_locker_key_app"
+)
