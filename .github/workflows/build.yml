@@ -18,7 +18,7 @@ jobs:
         submodules: 'recursive'
 
     - name: Build FAP
-      uses: flipperdevices/flipperzero-ide-action@v2
+      uses: Dax89/flipperzero-ide-action@v1
       with:
         app: ${{ github.event.repository.name }}
         target: f7
